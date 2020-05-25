@@ -10,12 +10,12 @@ yarn add @blackglory/wait-for
 
 ## API
 
-* `waitForAttached(...nodes: Node[]): Promise<void>`
-* `waitForDetached(...nodes: Node[]): Promise<void>`
-* `waitForSelectorAttached(selector: string): Promise<Element[]>`
-* `waitForSelectorDetached(selector: string): Promise<void>`
-* `waitForEvent<T extends EventTarget = Element>(target: EventTarget, event: string): Promise<T>`
-* `waitForDOMContentLoaded (): Promise<void>`
-* `waitForLoad(): Promise<void>`
-* `waitForFunction<T>(fn: () => T | PromiseLike<T>): Promise<T>`
-* `waitForTimeout(ms: number): Promise<void>`
+* `function waitForAttached(...nodes: Node[]): Promise<void>`
+* `function waitForDetached(...nodes: Node[]): Promise<void>`
+* `function waitForSelectorAttached(selector: string): Promise<Element[]>`
+* `function waitForSelectorDetached(selector: string): Promise<void>`
+* `function waitForEvent<T extends EventTarget = Element>(target: EventTarget, event: string): Promise<T>`
+* `function waitForDOMContentLoaded (): Promise<void>`
+* `function waitForLoad(): Promise<void>`
+* `function waitForFunction<T>(fn: () => T | PromiseLike<T>): Promise<T>`
+* `function waitForTimeout(ms: number): Promise<void>`
