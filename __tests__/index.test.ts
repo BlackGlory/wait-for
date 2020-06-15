@@ -14,5 +14,8 @@ test('Index', () => {
 
   , 'waitForFunction'
   , 'waitForTimeout'
+
+  , 'waitForStateChanged'
+  , 'waitForUrlChanged'
   ].sort())
 })

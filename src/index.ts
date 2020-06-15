@@ -10,3 +10,6 @@ export * from './wait-for-load'
 
 export * from './wait-for-function'
 export * from './wait-for-timeout'
+
+export * from './wait-for-state-changed'
+export * from './wait-for-url-changed'

@@ -19,3 +19,5 @@ yarn add @blackglory/wait-for
 * `function waitForLoad(): Promise<void>`
 * `function waitForFunction<T>(fn: () => T | PromiseLike<T>): Promise<T>`
 * `function waitForTimeout(ms: number): Promise<void>`
+* `function waitForStateChanged(): Promise<void>`
+* `function waitForUrlChanged(): Promise<void>`
