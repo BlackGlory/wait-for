@@ -2,7 +2,8 @@ import * as Index from '@src/index'
 
 test('Index', () => {
   expect(Object.keys(Index).sort()).toEqual([
-    'waitForAttached'
+    'waitForDOMChanged'
+  , 'waitForAttached'
   , 'waitForDetached'
 
   , 'waitForSelectorAttached'

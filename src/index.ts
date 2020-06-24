@@ -1,3 +1,4 @@
+export * from './wait-for-dom-changed'
 export * from './wait-for-attached'
 export * from './wait-for-detached'
 

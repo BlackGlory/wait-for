@@ -10,6 +10,7 @@ yarn add @blackglory/wait-for
 
 ## API
 
+* `function waitForDOMChanged(): Promies<void>`
 * `function waitForAttached(...nodes: Node[]): Promise<void>`
 * `function waitForDetached(...nodes: Node[]): Promise<void>`
 * `function waitForSelectorAttached(selector: string): Promise<Element[]>`
