@@ -1,6 +1,7 @@
 {
   "name": "@blackglory/wait-for",
   "version": "0.1.3",
+  "description": "A module for waiting for things to happen.",
   "files": [
     "lib",
     "dist"
