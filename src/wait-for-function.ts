@@ -1,5 +1,5 @@
 export async function waitForFunction<T>(fn: () => T | PromiseLike<T>): Promise<T> {
-  for (;;) {
+  while (true) {
     const result = await fn()
     if (result) return result
     await nextFrame()
