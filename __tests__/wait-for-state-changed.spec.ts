@@ -1,6 +1,6 @@
 import { waitForStateChanged } from '@src/wait-for-state-changed'
 import 'core-js/web/queue-microtask'
-import '@test/matchers'
+import '@blackglory/jest-matchers'
 
 describe('waitForStateChanged(): Promise<void>', () => {
   it('resolves when location.hash changed', async () => {

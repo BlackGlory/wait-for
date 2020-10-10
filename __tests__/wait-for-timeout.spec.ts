@@ -1,5 +1,5 @@
 import { waitForTimeout } from '@src/wait-for-timeout'
-import '@test/matchers'
+import '@blackglory/jest-matchers'
 
 describe('waitForTimeout(ms: number): Promise<void>', () => {
   it('calls setTimeout', () => {

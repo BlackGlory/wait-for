@@ -1,5 +1,5 @@
 import { waitForFunction } from '@src/wait-for-function'
-import '@test/matchers'
+import '@blackglory/jest-matchers'
 
 describe('waitForFunction<T>(fn: () => boolean | PromiseLike<boolean>): Promise<T>', () => {
   describe('fn returns a falsy value', () => {

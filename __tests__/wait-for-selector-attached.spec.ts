@@ -1,6 +1,6 @@
 import { waitForSelectorAttached } from '@src/wait-for-selector-attached'
 import 'core-js/web/queue-microtask'
-import '@test/matchers'
+import '@blackglory/jest-matchers'
 
 describe(`waitForSelectorAttached(selector: string): Promise<Element>`, () => {
   describe('elements exist', () => {

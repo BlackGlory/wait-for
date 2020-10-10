@@ -1,6 +1,6 @@
 import { waitForSelectorDetached } from '@src/wait-for-selector-detached'
 import 'core-js/web/queue-microtask'
-import '@test/matchers'
+import '@blackglory/jest-matchers'
 
 describe(`waitForSelectorDetached(selector: string): Promise<void>`, () => {
   describe('elements do not exist', () => {

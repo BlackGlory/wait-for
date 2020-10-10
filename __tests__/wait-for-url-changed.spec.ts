@@ -1,6 +1,6 @@
 import { waitForUrlChanged } from '@src/wait-for-url-changed'
 import 'core-js/web/queue-microtask'
-import '@test/matchers'
+import '@blackglory/jest-matchers'
 
 describe('waitForUrlChanged(): Promise<void>', () => {
   it('resolves when url changed', async () => {

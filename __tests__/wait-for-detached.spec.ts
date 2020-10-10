@@ -1,6 +1,6 @@
 import { waitForDetached } from '@src/wait-for-detached'
 import 'core-js/web/queue-microtask'
-import '@test/matchers'
+import '@blackglory/jest-matchers'
 
 describe('waitForDetached(nodes: Node[]): Promise<void>', () => {
   describe('element exists', () => {

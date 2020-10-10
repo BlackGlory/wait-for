@@ -1,6 +1,6 @@
 import { waitForDOMContentLoaded } from '@src/wait-for-dom-content-loaded'
 import 'core-js/web/queue-microtask'
-import '@test/matchers'
+import '@blackglory/jest-matchers'
 
 describe('waitForDOMContentLoaded(): Promise<void>', () => {
   describe('document.readyState = loading', () => {

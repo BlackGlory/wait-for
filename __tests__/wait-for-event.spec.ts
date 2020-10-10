@@ -1,6 +1,6 @@
 import { waitForEvent } from '@src/wait-for-event'
 import 'core-js/web/queue-microtask'
-import '@test/matchers'
+import '@blackglory/jest-matchers'
 
 describe('waitForEvent<T extends EventTarget = Element>(target: EventTarget, event: string): Promise<T>', () => {
   it('resolves when the event triggered', async () => {
