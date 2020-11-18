@@ -1,8 +1,8 @@
-import { waitForEvent } from '@src/wait-for-event'
+import { waitForEventTarget } from '@src/wait-for-event-target'
 import 'core-js/web/queue-microtask'
 import '@blackglory/jest-matchers'
 
-describe('waitForEvent<T extends EventTarget = Element>(target: EventTarget, event: string): Promise<T>', () => {
+describe('waitForEventTarget<T extends EventTarget>(target: T, event: string): Promise<T>', () => {
   it('resolves when the event triggered', async () => {
     const ul = document.createElement('ul')
     const addEventListener = jest.spyOn(ul, 'addEventListener')
@@ -10,7 +10,7 @@ describe('waitForEvent<T extends EventTarget = Element>(target: EventTarget, eve
     ul.append(li)
 
     try {
-      const result = waitForEvent(ul, 'click')
+      const result = waitForEventTarget(ul, 'click')
       queueMicrotask(() => li.dispatchEvent(new Event('click', { bubbles: true })))
       const proResult = await result
 

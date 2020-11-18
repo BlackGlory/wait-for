@@ -5,7 +5,8 @@ export * from './wait-for-detached'
 export * from './wait-for-selector-attached'
 export * from './wait-for-selector-detached'
 
-export * from './wait-for-event'
+export * from './wait-for-event-target'
+export * from './wait-for-event-emitter'
 export * from './wait-for-dom-content-loaded'
 export * from './wait-for-load'
 

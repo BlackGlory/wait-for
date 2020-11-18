@@ -15,7 +15,8 @@ yarn add @blackglory/wait-for
 * `function waitForDetached(...nodes: Node[]): Promise<void>`
 * `function waitForSelectorAttached(selector: string): Promise<Element[]>`
 * `function waitForSelectorDetached(selector: string): Promise<void>`
-* `function waitForEvent<T extends EventTarget = Element>(target: EventTarget, event: string): Promise<T>`
+* `function waitForEventTarget<T extends EventTarget>(target: T, event: string): Promise<T>`
+* `function waitForEventEmitter<T extends EventEmitter>(target: T, event: string): Promise<T>`
 * `function waitForDOMContentLoaded (): Promise<void>`
 * `function waitForLoad(): Promise<void>`
 * `function waitForFunction<T>(fn: () => T | PromiseLike<T>): Promise<T>`

@@ -9,7 +9,8 @@ test('Index', () => {
   , 'waitForSelectorAttached'
   , 'waitForSelectorDetached'
 
-  , 'waitForEvent'
+  , 'waitForEventTarget'
+  , 'waitForEventEmitter'
   , 'waitForDOMContentLoaded'
   , 'waitForLoad'
 
