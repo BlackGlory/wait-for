@@ -1,5 +1,6 @@
 import { fromMutationObserver } from './shared/from-mutation-observer'
-import { filter, flatMap } from 'rxjs/operators'
+import { filter, mergeMap } from 'rxjs/operators'
+import { toArray } from 'iterable-operator/lib/es2015/output/to-array'
 
 export function waitForSelectorAttached(selector: string): Promise<Element[]> {
   return new Promise(resolve => {
@@ -7,7 +8,7 @@ export function waitForSelectorAttached(selector: string): Promise<Element[]> {
     if (elements.length) return resolve(toArray(elements))
 
     const observer = fromMutationObserver(document.documentElement, { childList: true, subtree: true }).pipe(
-      flatMap(mutations => mutations)
+      mergeMap(mutations => mutations)
     , filter(isAddedNodesMutation)
     ).subscribe(() => {
       const elements = document.querySelectorAll(selector)
@@ -17,10 +18,6 @@ export function waitForSelectorAttached(selector: string): Promise<Element[]> {
       }
     })
   })
-}
-
-function toArray<T>(iterable: Iterable<T>): T[] {
-  return Array.from(iterable)
 }
 
 function isAddedNodesMutation(mutation: MutationRecord): boolean {

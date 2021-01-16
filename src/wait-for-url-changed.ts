@@ -1,7 +1,6 @@
 import { fromUrlChanged } from './shared/from-url-changed'
-import { first } from 'rxjs/operators'
+import { firstValueFrom } from 'rxjs'
 
 export async function waitForUrlChanged(): Promise<void> {
-  const source = fromUrlChanged().pipe(first())
-  await source.toPromise()
+  await firstValueFrom(fromUrlChanged())
 }
