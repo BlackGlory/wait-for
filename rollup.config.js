@@ -6,6 +6,8 @@ import { terser } from 'rollup-plugin-terser'
 import analyze from 'rollup-plugin-analyzer'
 import replace from '@rollup/plugin-replace'
 
+const UMD_NAME = 'WaitFor'
+
 export default [
   ...createOptions({
     directory: 'es2015'
@@ -23,10 +25,10 @@ function createOptions({ directory, target }) {
       'Object.defineProperty(exports, "__esModule", { value: true });': ''
     , delimiters: ['\n', '\n']
     })
-  , typescript({ target })
-  , json()
   , resolve({ browser: true })
   , commonjs()
+  , json()
+  , typescript({ target })
   ]
 
   return [
@@ -59,7 +61,7 @@ function createOptions({ directory, target }) {
     , {
         file: `dist/${directory}/${name}.umd.js`
       , format: 'umd'
-      , name: 'WaitFor'
+      , name: UMD_NAME
       , sourcemap: true
       }
     ]
@@ -76,7 +78,7 @@ function createOptions({ directory, target }) {
     , {
         file: `dist/${directory}/${name}.umd.min.js`
       , format: 'umd'
-      , name: 'WaitFor'
+      , name: UMD_NAME
       , sourcemap: true
       }
     ]
