@@ -1,6 +1,6 @@
 {
   "name": "@blackglory/wait-for",
-  "version": "0.2.6",
+  "version": "0.2.7",
   "description": "A module for waiting for things to happen.",
   "keywords": [
     "waitFor",
