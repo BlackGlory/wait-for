@@ -68,6 +68,7 @@
     "typescript": "^4.2.4"
   },
   "dependencies": {
+    "@blackglory/observe": "^0.1.0",
     "extra-promise": "^0.16.2",
     "iterable-operator": "^0.13.6",
     "rxjs": "^7.0.0-beta.13"

@@ -6,8 +6,8 @@ test('Index', () => {
   , 'waitForAttached'
   , 'waitForDetached'
 
-  , 'waitForSelectorAttached'
-  , 'waitForSelectorDetached'
+  , 'waitForElementsMatchingSelectorAttached'
+  , 'waitForAllElementsMatchingSelectorDetached'
 
   , 'waitForEventTarget'
   , 'waitForEventEmitter'

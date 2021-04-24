@@ -1,13 +1,17 @@
-import { waitForSelectorDetached } from '@src/wait-for-selector-detached'
+import { waitForAllElementsMatchingSelectorDetached } from '@src/wait-for-all-elements-matching-selector-detached'
 import 'core-js/web/queue-microtask'
 import '@blackglory/jest-matchers'
 
-describe(`waitForSelectorDetached(selector: string): Promise<void>`, () => {
+describe(`
+  waitForAllElementsMatchingSelectorDetached(
+    selector: string
+  ): Promise<void>
+`, () => {
   describe('elements do not exist', () => {
     it('resolves immediately', async () => {
       document.body.innerHTML = ''
 
-      const result = waitForSelectorDetached('#target')
+      const result = waitForAllElementsMatchingSelectorDetached('#target')
       const proResult = await result
 
       expect(result).toBePromise()
@@ -22,7 +26,7 @@ describe(`waitForSelectorDetached(selector: string): Promise<void>`, () => {
       target.id = 'target'
       document.body.append(target)
 
-      const result = waitForSelectorDetached('#target')
+      const result = waitForAllElementsMatchingSelectorDetached('#target')
       queueMicrotask(() => target.remove())
       const proResult = await result
 

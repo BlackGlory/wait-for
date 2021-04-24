@@ -2,8 +2,8 @@ export * from './wait-for-dom-changed'
 export * from './wait-for-attached'
 export * from './wait-for-detached'
 
-export * from './wait-for-selector-attached'
-export * from './wait-for-selector-detached'
+export * from './wait-for-elements-matching-selector-attached'
+export * from './wait-for-all-elements-matching-selector-detached'
 
 export * from './wait-for-event-target'
 export * from './wait-for-event-emitter'

@@ -1,8 +1,12 @@
-import { waitForSelectorAttached } from '@src/wait-for-selector-attached'
+import { waitForElementsMatchingSelectorAttached } from '@src/wait-for-elements-matching-selector-attached'
 import 'core-js/web/queue-microtask'
 import '@blackglory/jest-matchers'
 
-describe(`waitForSelectorAttached(selector: string): Promise<Element>`, () => {
+describe(`
+  waitForElementsMatchingSelectorAttached(
+    selector: string
+  ): Promise<Element[]>
+`, () => {
   describe('elements exist', () => {
     it('resolves immediately', async () => {
       document.body.innerHTML = ''
@@ -10,7 +14,7 @@ describe(`waitForSelectorAttached(selector: string): Promise<Element>`, () => {
       target.id = 'target'
       document.body.append(target)
 
-      const result = waitForSelectorAttached('#target')
+      const result = waitForElementsMatchingSelectorAttached('#target')
       const proResult = await result
 
       expect(result).toBePromise()
@@ -26,7 +30,7 @@ describe(`waitForSelectorAttached(selector: string): Promise<Element>`, () => {
       target.id = 'target'
       container.append(target)
 
-      const result = waitForSelectorAttached('#target')
+      const result = waitForElementsMatchingSelectorAttached('#target')
       queueMicrotask(() => document.body.append(container))
       const proResult = await result
 
