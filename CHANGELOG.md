@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.3.0](https://github.com/BlackGlory/wait-for/compare/v0.2.13...v0.3.0) (2021-04-24)
+
+
+### ⚠ BREAKING CHANGES
+
+* - rename `waitForSelectorAttached` =>
+`waitForElementsMatchingSelectorAttacked`
+- rename `waitForSelectorDetached` =>
+`waitForAllElementsMatchingSelectorDetached`
+
+* use @blackglory/observe ([a9f07b9](https://github.com/BlackGlory/wait-for/commit/a9f07b9be9d9011be3522b7c5f00d7bf25e81fcb))
+
 ### [0.2.13](https://github.com/BlackGlory/wait-for/compare/v0.2.12...v0.2.13) (2021-04-24)
 
 ### [0.2.12](https://github.com/BlackGlory/wait-for/compare/v0.2.11...v0.2.12) (2021-03-27)
