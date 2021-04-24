@@ -1,12 +1,11 @@
 import { Observable, fromEvent, merge, firstValueFrom } from 'rxjs'
-import { first } from 'rxjs/operators'
 
 export async function waitForStateChanged(): Promise<void> {
   const source = merge(
     fromPushState()
   , fromReplaceState()
   , fromEvent(window, 'popstate')
-  ).pipe(first())
+  )
   await firstValueFrom(source)
 }
 
