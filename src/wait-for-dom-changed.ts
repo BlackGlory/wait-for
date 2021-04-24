@@ -1,4 +1,4 @@
-import { fromMutationObserver } from './shared/from-mutation-observer'
+import { fromMutationObserver } from '@utils/from-mutation-observer'
 import { first } from 'rxjs/operators'
 
 export async function waitForDOMChanged(): Promise<void> {

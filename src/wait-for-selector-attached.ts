@@ -1,4 +1,4 @@
-import { fromMutationObserver } from './shared/from-mutation-observer'
+import { fromMutationObserver } from '@utils/from-mutation-observer'
 import { filter, mergeMap } from 'rxjs/operators'
 import { toArray } from 'iterable-operator/lib/es2015/output/to-array'
 
@@ -7,7 +7,10 @@ export function waitForSelectorAttached(selector: string): Promise<Element[]> {
     const elements = document.querySelectorAll(selector)
     if (elements.length) return resolve(toArray(elements))
 
-    const observer = fromMutationObserver(document.documentElement, { childList: true, subtree: true }).pipe(
+    const observer = fromMutationObserver(
+      document.documentElement
+    , { childList: true, subtree: true }
+    ).pipe(
       mergeMap(mutations => mutations)
     , filter(isAddedNodesMutation)
     ).subscribe(() => {
