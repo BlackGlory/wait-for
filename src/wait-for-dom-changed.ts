@@ -1,5 +1,6 @@
 import { fromMutationObserver } from '@utils/from-mutation-observer'
 import { first } from 'rxjs/operators'
+import { firstValueFrom } from 'rxjs'
 
 export async function waitForDOMChanged(): Promise<void> {
   const source = fromMutationObserver(document.documentElement, {
@@ -9,5 +10,5 @@ export async function waitForDOMChanged(): Promise<void> {
   , subtree: true
   }).pipe(first())
 
-  await source.toPromise()
+  await firstValueFrom(source)
 }

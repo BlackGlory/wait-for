@@ -1,4 +1,4 @@
-import { Observable, fromEvent, merge } from 'rxjs'
+import { Observable, fromEvent, merge, firstValueFrom } from 'rxjs'
 import { first } from 'rxjs/operators'
 
 export async function waitForStateChanged(): Promise<void> {
@@ -7,7 +7,7 @@ export async function waitForStateChanged(): Promise<void> {
   , fromReplaceState()
   , fromEvent(window, 'popstate')
   ).pipe(first())
-  await source.toPromise()
+  await firstValueFrom(source)
 }
 
 function fromPushState(): Observable<void> {
