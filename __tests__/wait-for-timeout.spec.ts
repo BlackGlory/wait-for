@@ -4,6 +4,7 @@ import '@blackglory/jest-matchers'
 describe('waitForTimeout(ms: number): Promise<void>', () => {
   it('calls setTimeout', () => {
     jest.useFakeTimers()
+    const setTimeout = jest.spyOn(globalThis, 'setTimeout')
     const ms = 500
 
     waitForTimeout(ms)
