@@ -1,5 +1,4 @@
 import { waitForStateChanged } from '@src/wait-for-state-changed'
-import 'core-js/web/queue-microtask'
 import '@blackglory/jest-matchers'
 
 describe('waitForStateChanged(): Promise<void>', () => {

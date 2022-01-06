@@ -1,5 +1,4 @@
 import { waitForAttached } from '@src/wait-for-attached'
-import 'core-js/web/queue-microtask'
 import '@blackglory/jest-matchers'
 
 describe('waitForAttached(nodes: Node[]): Promise<void>', () => {

@@ -1,5 +1,4 @@
 import { waitForLoad } from '@src/wait-for-load'
-import 'core-js/web/queue-microtask'
 import '@blackglory/jest-matchers'
 
 describe('waitForLoad(): Promise<void>', () => {

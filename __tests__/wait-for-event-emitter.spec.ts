@@ -1,5 +1,4 @@
 import { waitForEventEmitter } from '@src/wait-for-event-emitter'
-import 'core-js/web/queue-microtask'
 import '@blackglory/jest-matchers'
 import { EventEmitter } from 'events'
 

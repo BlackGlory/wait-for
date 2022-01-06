@@ -1,5 +1,4 @@
 import { waitForAllElementsMatchingSelectorDetached } from '@src/wait-for-all-elements-matching-selector-detached'
-import 'core-js/web/queue-microtask'
 import '@blackglory/jest-matchers'
 
 describe(`

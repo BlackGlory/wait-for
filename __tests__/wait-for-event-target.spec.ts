@@ -1,5 +1,4 @@
 import { waitForEventTarget } from '@src/wait-for-event-target'
-import 'core-js/web/queue-microtask'
 import '@blackglory/jest-matchers'
 
 describe('waitForEventTarget<T extends EventTarget>(target: T, event: string): Promise<T>', () => {

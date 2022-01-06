@@ -1,5 +1,4 @@
 import { waitForDOMChanged } from '@src/wait-for-dom-changed'
-import 'core-js/web/queue-microtask'
 import '@blackglory/jest-matchers'
 
 describe('waitForDOMChanged(): Promise<void>', () => {
