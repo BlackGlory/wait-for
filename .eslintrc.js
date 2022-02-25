@@ -10,5 +10,6 @@ module.exports = {
   ]
 , rules: {
     'no-constant-condition': 'off'
+  , '@typescript-eslint/no-inferrable-types': 'off'
   }
 }

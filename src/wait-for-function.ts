@@ -1,13 +1,9 @@
-import { setImmediate } from 'extra-timers'
+import { delay } from 'extra-promise'
 
-export async function waitForFunction<T>(fn: () => T | PromiseLike<T>): Promise<T> {
+export async function waitForFunction<T>(fn: () => T | PromiseLike<T>, interval: number = 0): Promise<T> {
   while (true) {
     const result = await fn()
     if (result) return result
-    await next()
+    await delay(interval)
   }
-}
-
-function next(): Promise<void> {
-  return new Promise(resolve => setImmediate(resolve))
 }
