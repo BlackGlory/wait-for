@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.4.4](https://github.com/BlackGlory/wait-for/compare/v0.4.3...v0.4.4) (2022-03-09)
+
+
+### Features
+
+* add waitForComplete, waitForInteractiveOrComplete ([1ab39a6](https://github.com/BlackGlory/wait-for/commit/1ab39a6f1b56a290fc761b9fb76ae6361a3c3baa))
+
 ### [0.4.3](https://github.com/BlackGlory/wait-for/compare/v0.4.2...v0.4.3) (2022-02-25)
 
 
