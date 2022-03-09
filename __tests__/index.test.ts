@@ -13,6 +13,8 @@ test('Index', () => {
   , 'waitForEventEmitter'
   , 'waitForDOMContentLoaded'
   , 'waitForLoad'
+  , 'waitForComplete'
+  , 'waitForInteractiveOrComplete'
 
   , 'waitForFunction'
   , 'waitForTimeout'

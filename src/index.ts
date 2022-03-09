@@ -9,6 +9,8 @@ export * from './wait-for-event-target'
 export * from './wait-for-event-emitter'
 export * from './wait-for-dom-content-loaded'
 export * from './wait-for-load'
+export * from './wait-for-complete'
+export * from './wait-for-interactive-or-complete'
 
 export * from './wait-for-function'
 export * from './wait-for-timeout'

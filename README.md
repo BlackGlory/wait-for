@@ -2,7 +2,6 @@
 A module for waiting for things to happen.
 
 ## Install
-
 ```sh
 npm install --save @blackglory/wait-for
 # or
@@ -10,7 +9,6 @@ yarn add @blackglory/wait-for
 ```
 
 ## API
-
 - `function waitForDOMChanged(): Promies<void>`
 - `function waitForAttached(...nodes: Node[]): Promise<void>`
 - `function waitForDetached(...nodes: Node[]): Promise<void>`
@@ -18,8 +16,10 @@ yarn add @blackglory/wait-for
 - `function waitForAllElementsMatchingSelectorDetached(selector: string): Promise<void>`
 - `function waitForEventTarget<T extends EventTarget>(target: T, event: string): Promise<T>`
 - `function waitForEventEmitter<T extends EventEmitter>(target: T, event: string): Promise<T>`
-- `function waitForDOMContentLoaded (): Promise<void>`
+- `function waitForDOMContentLoaded(): Promise<void>`
 - `function waitForLoad(): Promise<void>`
+- `function waitForComplete(): Promise<void>`
+- `function waitForInteractiveOrComplete(): Promise<void>`
 - `function waitForFunction<T>(fn: () => T | PromiseLike<T>, interval: number = 0): Promise<T>`
 - `function waitForTimeout(ms: number): Promise<void>`
 - `function waitForStateChanged(): Promise<void>`
