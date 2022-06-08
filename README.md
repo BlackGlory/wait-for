@@ -50,7 +50,7 @@ function waitForAllElementsMatchingSelectorDetached(
 function waitForEventTarget<T extends EventTarget>(
   target: T
 , event: string
-): Promise<T>
+): Promise<Event>
 ```
 
 ### waitForEventEmitter
@@ -58,7 +58,7 @@ function waitForEventTarget<T extends EventTarget>(
 function waitForEventEmitter<T extends EventEmitter>(
   target: T
 , event: string
-): Promise<T>
+): Promise<unknown[]>
 ```
 
 ### waitForEmitter
