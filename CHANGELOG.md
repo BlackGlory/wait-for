@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.5.0](https://github.com/BlackGlory/wait-for/compare/v0.4.4...v0.5.0) (2022-06-08)
+
+
+### ⚠ BREAKING CHANGES
+
+* waitForEventEmitter, waitForEventTarget were rewritten
+
+### Features
+
+* add waitForEmitter ([07846e9](https://github.com/BlackGlory/wait-for/commit/07846e9ba7958340f9638d519eddedf8360959f6))
+* rewrite waitForEventEmitter, waitForEventTarget ([cbe0002](https://github.com/BlackGlory/wait-for/commit/cbe0002aa72000b58f5ea174669e71385973a5fb))
+
 ### [0.4.4](https://github.com/BlackGlory/wait-for/compare/v0.4.3...v0.4.4) (2022-03-09)
 
 
