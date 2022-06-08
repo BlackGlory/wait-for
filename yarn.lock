@@ -515,6 +515,18 @@
     justypes "^2.0.0"
     rxjs "^7.5.5"
 
+"@blackglory/structures@^0.6.0":
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/@blackglory/structures/-/structures-0.6.0.tgz#703bfee5a0a2c2debbbd5477e16e29f9cdf3c699"
+  integrity sha512-1Ckrma8j921+zKwrKZdpNYbbZpdnJOr11tNx/9JZLzV/LMWZhWBTcWUsikloCEFiRBEYi78QDolH5B4RLjwfLw==
+  dependencies:
+    "@blackglory/errors" "^2.2.1"
+    "@blackglory/types" "^1.1.0"
+    extra-timers "^0.2.5"
+    iterable-operator "^1.1.0"
+    justypes "^2.0.0"
+    rxjs "^7.5.5"
+
 "@blackglory/types@^0.6.3", "@blackglory/types@^0.6.5":
   version "0.6.5"
   resolved "https://registry.yarnpkg.com/@blackglory/types/-/types-0.6.5.tgz#5f01c142ce4a98ff32f5b6fd7ea396f6e0132fea"

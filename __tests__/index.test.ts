@@ -11,6 +11,7 @@ test('Index', () => {
 
   , 'waitForEventTarget'
   , 'waitForEventEmitter'
+  , 'waitForEmitter'
   , 'waitForDOMContentLoaded'
   , 'waitForLoad'
   , 'waitForComplete'
