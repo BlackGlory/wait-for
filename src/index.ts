@@ -18,3 +18,6 @@ export * from './wait-for-timeout'
 
 export * from './wait-for-state-changed'
 export * from './wait-for-url-changed'
+
+export * from './wait-for-all-microtasks-processed'
+export * from './wait-for-all-macrotasks-processed'

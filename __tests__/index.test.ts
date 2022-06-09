@@ -22,5 +22,8 @@ test('Index', () => {
 
   , 'waitForStateChanged'
   , 'waitForUrlChanged'
+
+  , 'waitForAllMicrotasksProcessed'
+  , 'waitForAllMacrotasksProcessed'
   ].sort())
 })

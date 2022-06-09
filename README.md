@@ -114,3 +114,13 @@ function waitForStateChanged(): Promise<void>
 ```ts
 function waitForUrlChanged(): Promise<void>
 ```
+
+### waitForAllMacrotasksProcessed
+```ts
+function waitForAllMacrotasksProcessed(): Promise<void>
+```
+
+### waitForAllMicrotasksProcessed
+```ts
+function waitForAllMicrotasksProcessed(): Promise<void>
+```
