@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.5.3](https://github.com/BlackGlory/wait-for/compare/v0.5.2...v0.5.3) (2022-11-01)
+
+
+### Features
+
+* add `signal` parameters ([b22d4fa](https://github.com/BlackGlory/wait-for/commit/b22d4fa03b62fe0c63015f0f3ebc952dbb22fe98))
+
 ### [0.5.2](https://github.com/BlackGlory/wait-for/compare/v0.5.1...v0.5.2) (2022-11-01)
 
 ### [0.5.1](https://github.com/BlackGlory/wait-for/compare/v0.5.0...v0.5.1) (2022-06-09)
