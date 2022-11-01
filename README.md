@@ -63,7 +63,7 @@ function waitForEventEmitter<T extends EventEmitter>(
 
 ### waitForEmitter
 ```ts
-export function waitForEmitter<
+function waitForEmitter<
   EventToArgs extends Record<string, unknown[]>
 , Event extends keyof EventToArgs
 >(
