@@ -1,5 +1,5 @@
 import { observeAdditionOfDescendantNodes } from '@blackglory/observe'
-import { toArray } from 'iterable-operator/lib/es2015/output/to-array'
+import { toArray } from 'iterable-operator'
 
 export function waitForElementsMatchingSelectorAttached(
   selector: string
