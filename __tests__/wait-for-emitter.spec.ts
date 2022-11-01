@@ -1,6 +1,8 @@
 import { waitForEmitter } from '@src/wait-for-emitter'
-import '@blackglory/jest-matchers'
+import { AbortController } from 'extra-abort'
+import { getErrorPromise } from 'return-style'
 import { Emitter } from '@blackglory/structures'
+import '@blackglory/jest-matchers'
 
 describe('waitForEmitter', () => {
   it('resolves when the event triggered', async () => {
@@ -21,5 +23,36 @@ describe('waitForEmitter', () => {
     } finally {
       addEventListener.mockRestore()
     }
+  })
+
+  describe('rejects when the signal aborted', () => {
+    test('signal aborted before listening', async () => {
+      const controller = new AbortController()
+      controller.abort()
+      const target = new Emitter()
+      const once = jest.spyOn(target, 'once')
+
+      const err = await getErrorPromise(
+        waitForEmitter(target, 'event', controller.signal)
+      )
+
+      expect(err?.name).toBe('AbortError') // expect(err).toBeInstanceOf(AbortError)
+      expect(once).not.toBeCalled()
+    })
+
+    test('signal aborted after listening ', async () => {
+      const controller = new AbortController()
+      const target = new Emitter()
+      const once = jest.spyOn(target, 'once')
+
+      const promise = getErrorPromise(
+        waitForEmitter(target, 'event', controller.signal)
+      )
+      queueMicrotask(() => controller.abort())
+      const err = await promise
+
+      expect(err?.name).toBe('AbortError') // expect(err).toBeInstanceOf(AbortError)
+      expect(once).toBeCalledTimes(1)
+    })
   })
 })
