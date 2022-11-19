@@ -4,7 +4,7 @@ export function waitForEventEmitter<T extends EventEmitter>(
   target: T
 , event: string
 , signal?: AbortSignal
-): Promise<unknown> {
+): Promise<unknown[]> {
   return new Promise((resolve, reject) => {
     if (signal?.aborted) return reject(signal.reason)
 
