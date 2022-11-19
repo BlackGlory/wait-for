@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.6.0](https://github.com/BlackGlory/wait-for/compare/v0.5.3...v0.6.0) (2022-11-19)
+
+
+### ⚠ BREAKING CHANGES
+
+* The minimum version of Node.js is 16
+
+### Bug Fixes
+
+* the signature of `waitForEventEmitter` ([723d15c](https://github.com/BlackGlory/wait-for/commit/723d15c23e254c287adc407cb7035336fec58857))
+
+
+* upgrade dependencies ([e3fb84c](https://github.com/BlackGlory/wait-for/commit/e3fb84ca444bbdafca3dcf6bc724a35871f0ef96))
+
 ### [0.5.3](https://github.com/BlackGlory/wait-for/compare/v0.5.2...v0.5.3) (2022-11-01)
 
 
