@@ -1,5 +1,4 @@
 import { waitForDOMChanged } from '@src/wait-for-dom-changed'
-import '@blackglory/jest-matchers'
 
 describe('waitForDOMChanged(): Promise<void>', () => {
   it('resolves when dom changed', async () => {
@@ -7,11 +6,10 @@ describe('waitForDOMChanged(): Promise<void>', () => {
     const target = document.createElement('div')
     document.body.append(target)
 
-    const result = waitForDOMChanged()
+    const promise = waitForDOMChanged()
     queueMicrotask(() => target.id = 'target')
-    const proResult = await result
+    const result = await promise
 
-    expect(result).toBePromise()
-    expect(proResult).toBeUndefined()
+    expect(result).toBeUndefined()
   })
 })

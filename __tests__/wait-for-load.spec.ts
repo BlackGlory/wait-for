@@ -1,5 +1,4 @@
 import { waitForLoad } from '@src/wait-for-load'
-import '@blackglory/jest-matchers'
 
 describe('waitForLoad(): Promise<void>', () => {
   describe('document.readyState = loading', () => {
@@ -8,12 +7,11 @@ describe('waitForLoad(): Promise<void>', () => {
       setReadyState('loading')
 
       try {
-        const result = waitForLoad()
+        const promise = waitForLoad()
         queueMicrotask(() => window.dispatchEvent(new Event('load')))
-        const proResult = await result
+        const result = await promise
 
-        expect(result).toBePromise()
-        expect(proResult).toBeUndefined()
+        expect(result).toBeUndefined()
         expect(addEventListener).toBeCalledTimes(1)
         expect(addEventListener).toBeCalledWith('load', expect.any(Function), { once: true })
       } finally {
@@ -28,12 +26,11 @@ describe('waitForLoad(): Promise<void>', () => {
       setReadyState('interactive')
 
       try {
-        const result = waitForLoad()
+        const promise = waitForLoad()
         queueMicrotask(() => window.dispatchEvent(new Event('load')))
-        const proResult = await result
+        const result = await promise
 
-        expect(result).toBePromise()
-        expect(proResult).toBeUndefined()
+        expect(result).toBeUndefined()
         expect(addEventListener).toBeCalledTimes(1)
         expect(addEventListener).toBeCalledWith('load', expect.any(Function), { once: true })
       } finally {
@@ -48,11 +45,9 @@ describe('waitForLoad(): Promise<void>', () => {
       setReadyState('complete')
 
       try {
-        const result = waitForLoad()
-        const proResult = await result
+        const result = await waitForLoad()
 
-        expect(result).toBePromise()
-        expect(proResult).toBeUndefined()
+        expect(result).toBeUndefined()
         expect(addEventListener).not.toBeCalled()
       } finally {
         addEventListener.mockRestore()

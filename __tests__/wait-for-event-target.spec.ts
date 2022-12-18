@@ -1,7 +1,6 @@
 import { waitForEventTarget } from '@src/wait-for-event-target'
 import { AbortController } from 'extra-abort'
 import { getErrorPromise } from 'return-style'
-import '@blackglory/jest-matchers'
 
 describe('waitForEventTarget', () => {
   it('resolves when the event triggered', async () => {
@@ -10,13 +9,12 @@ describe('waitForEventTarget', () => {
     const li = document.createElement('li')
     ul.append(li)
 
-    const result = waitForEventTarget(ul, 'click')
+    const promise = waitForEventTarget(ul, 'click')
     queueMicrotask(() => li.dispatchEvent(new Event('click', { bubbles: true })))
-    const proResult = await result
+    const result = await promise
 
-    expect(result).toBePromise()
-    expect(proResult).toBeInstanceOf(Event)
-    expect(proResult.target).toBe(li)
+    expect(result).toBeInstanceOf(Event)
+    expect(result.target).toBe(li)
     expect(addEventListener).toBeCalledTimes(1)
     expect(addEventListener).toBeCalledWith('click', expect.any(Function), { once: true })
   })

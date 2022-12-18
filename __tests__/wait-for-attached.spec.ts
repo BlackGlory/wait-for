@@ -1,5 +1,4 @@
 import { waitForAttached } from '@src/wait-for-attached'
-import '@blackglory/jest-matchers'
 
 describe('waitForAttached(nodes: Node[]): Promise<void>', () => {
   describe('element exists', () => {
@@ -9,11 +8,9 @@ describe('waitForAttached(nodes: Node[]): Promise<void>', () => {
       target.id = 'target'
       document.body.append(target)
 
-      const result = waitForAttached(target)
-      const proResult = await result
+      const result = await waitForAttached(target)
 
-      expect(result).toBePromise()
-      expect(proResult).toBeUndefined()
+      expect(result).toBeUndefined()
     })
   })
 
@@ -23,12 +20,11 @@ describe('waitForAttached(nodes: Node[]): Promise<void>', () => {
       const target = document.createElement('div')
       target.id = 'target'
 
-      const result = waitForAttached(target)
+      const promise = waitForAttached(target)
       queueMicrotask(() => document.body.append(target))
-      const proResult = await result
+      const result = await promise
 
-      expect(result).toBePromise()
-      expect(proResult).toBeUndefined()
+      expect(result).toBeUndefined()
     })
   })
 })

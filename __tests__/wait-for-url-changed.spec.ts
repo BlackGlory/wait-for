@@ -1,13 +1,11 @@
 import { waitForUrlChanged } from '@src/wait-for-url-changed'
-import '@blackglory/jest-matchers'
 
 describe('waitForUrlChanged(): Promise<void>', () => {
   it('resolves when url changed', async () => {
-    const result = waitForUrlChanged()
+    const promise = waitForUrlChanged()
     queueMicrotask(() => location.hash = 'test')
-    const proResult = await result
+    const result = await promise
 
-    expect(result).toBePromise()
-    expect(proResult).toBeUndefined()
+    expect(result).toBeUndefined()
   })
 })

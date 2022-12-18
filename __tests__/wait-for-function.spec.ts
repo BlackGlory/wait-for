@@ -1,5 +1,4 @@
 import { waitForFunction } from '@src/wait-for-function'
-import '@blackglory/jest-matchers'
 
 const TIME_ERROR = 1
 
@@ -12,13 +11,11 @@ describe('waitForFunction<T>(fn: () => boolean | PromiseLike<boolean>, interval?
         .mockReturnValue(Promise.resolve(value))
 
       const startTime = Date.now()
-      const result = waitForFunction(fn, 1000)
-      const proResult = await result
+      const result = await waitForFunction(fn, 1000)
       const elapsed = Date.now() - startTime
 
-      expect(result).toBePromise()
       expect(fn).toBeCalledTimes(2)
-      expect(proResult).toBe(64)
+      expect(result).toBe(64)
       expect(elapsed).toBeGreaterThanOrEqual(1000 - TIME_ERROR)
     })
   })
@@ -29,13 +26,11 @@ describe('waitForFunction<T>(fn: () => boolean | PromiseLike<boolean>, interval?
       const fn = jest.fn().mockReturnValue(Promise.resolve(value))
 
       const startTime = Date.now()
-      const result = waitForFunction(fn)
-      const proResult = await result
+      const result = await waitForFunction(fn)
       const elapsed = Date.now() - startTime
 
-      expect(result).toBePromise()
       expect(fn).toBeCalledTimes(1)
-      expect(proResult).toBe(value)
+      expect(result).toBe(value)
       expect(elapsed).toBeLessThan(1000 + TIME_ERROR)
     })
   })

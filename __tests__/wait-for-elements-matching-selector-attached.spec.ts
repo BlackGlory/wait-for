@@ -1,5 +1,4 @@
 import { waitForElementsMatchingSelectorAttached } from '@src/wait-for-elements-matching-selector-attached'
-import '@blackglory/jest-matchers'
 
 describe(`
   waitForElementsMatchingSelectorAttached(
@@ -13,11 +12,9 @@ describe(`
       target.id = 'target'
       document.body.append(target)
 
-      const result = waitForElementsMatchingSelectorAttached('#target')
-      const proResult = await result
+      const result = await waitForElementsMatchingSelectorAttached('#target')
 
-      expect(result).toBePromise()
-      expect(proResult).toEqual([target])
+      expect(result).toEqual([target])
     })
   })
 
@@ -29,12 +26,11 @@ describe(`
       target.id = 'target'
       container.append(target)
 
-      const result = waitForElementsMatchingSelectorAttached('#target')
+      const promise = waitForElementsMatchingSelectorAttached('#target')
       queueMicrotask(() => document.body.append(container))
-      const proResult = await result
+      const result = await promise
 
-      expect(result).toBePromise()
-      expect(proResult).toEqual([target])
+      expect(result).toEqual([target])
     })
   })
 })

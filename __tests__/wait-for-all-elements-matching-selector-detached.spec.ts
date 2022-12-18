@@ -1,5 +1,4 @@
 import { waitForAllElementsMatchingSelectorDetached } from '@src/wait-for-all-elements-matching-selector-detached'
-import '@blackglory/jest-matchers'
 
 describe(`
   waitForAllElementsMatchingSelectorDetached(
@@ -10,11 +9,9 @@ describe(`
     it('resolves immediately', async () => {
       document.body.innerHTML = ''
 
-      const result = waitForAllElementsMatchingSelectorDetached('#target')
-      const proResult = await result
+      const result = await waitForAllElementsMatchingSelectorDetached('#target')
 
-      expect(result).toBePromise()
-      expect(proResult).toBeUndefined()
+      expect(result).toBeUndefined()
     })
   })
 
@@ -25,12 +22,11 @@ describe(`
       target.id = 'target'
       document.body.append(target)
 
-      const result = waitForAllElementsMatchingSelectorDetached('#target')
+      const promise = waitForAllElementsMatchingSelectorDetached('#target')
       queueMicrotask(() => target.remove())
-      const proResult = await result
+      const result = await promise
 
-      expect(result).toBePromise()
-      expect(proResult).toBeUndefined()
+      expect(result).toBeUndefined()
     })
   })
 })

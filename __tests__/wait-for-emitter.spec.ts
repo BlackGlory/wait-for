@@ -2,7 +2,6 @@ import { waitForEmitter } from '@src/wait-for-emitter'
 import { AbortController } from 'extra-abort'
 import { getErrorPromise } from 'return-style'
 import { Emitter } from '@blackglory/structures'
-import '@blackglory/jest-matchers'
 
 describe('waitForEmitter', () => {
   it('resolves when the event triggered', async () => {
@@ -11,12 +10,11 @@ describe('waitForEmitter', () => {
     const addEventListener = jest.spyOn(emitter, 'once')
 
     try {
-      const result = waitForEmitter(emitter, 'message')
+      const promise = waitForEmitter(emitter, 'message')
       queueMicrotask(() => emitter.emit('message', ...args))
-      const proResult = await result
+      const result = await promise
 
-      expect(result).toBePromise()
-      expect(proResult).toStrictEqual(args)
+      expect(result).toStrictEqual(args)
 
       expect(addEventListener).toBeCalledTimes(1)
       expect(addEventListener).toBeCalledWith('message', expect.any(Function))

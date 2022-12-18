@@ -1,5 +1,4 @@
 import { waitForDetached } from '@src/wait-for-detached'
-import '@blackglory/jest-matchers'
 
 describe('waitForDetached(nodes: Node[]): Promise<void>', () => {
   describe('element exists', () => {
@@ -8,11 +7,9 @@ describe('waitForDetached(nodes: Node[]): Promise<void>', () => {
       const target = document.createElement('div')
       target.id = 'target'
 
-      const result = waitForDetached(target)
-      const proResult = await result
+      const result = await waitForDetached(target)
 
-      expect(result).toBePromise()
-      expect(proResult).toBeUndefined()
+      expect(result).toBeUndefined()
     })
   })
 
@@ -22,12 +19,11 @@ describe('waitForDetached(nodes: Node[]): Promise<void>', () => {
       const target = document.createElement('div')
       target.id = 'target'
 
-      const result = waitForDetached(target)
+      const promise = waitForDetached(target)
       queueMicrotask(() => target.remove())
-      const proResult = await result
+      const result = await promise
 
-      expect(result).toBePromise()
-      expect(proResult).toBeUndefined()
+      expect(result).toBeUndefined()
     })
   })
 })

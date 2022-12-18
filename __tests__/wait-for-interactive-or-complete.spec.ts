@@ -1,5 +1,4 @@
 import { waitForInteractiveOrComplete } from '@src/wait-for-interactive-or-complete'
-import '@blackglory/jest-matchers'
 
 describe('waitForInteractiveOrComplete(): Promise<void>', () => {
   describe('document.readyState = loading', () => {
@@ -8,15 +7,14 @@ describe('waitForInteractiveOrComplete(): Promise<void>', () => {
       setReadyState('loading')
 
       try {
-        const result = waitForInteractiveOrComplete()
+        const promise = waitForInteractiveOrComplete()
         queueMicrotask(() => {
           setReadyState('interactive')
           document.dispatchEvent(new Event('readystatechange'))
         })
-        const proResult = await result
+        const result = await promise
 
-        expect(result).toBePromise()
-        expect(proResult).toBeUndefined()
+        expect(result).toBeUndefined()
         expect(addEventListener).toBeCalledTimes(1)
       } finally {
         addEventListener.mockRestore()
@@ -30,11 +28,9 @@ describe('waitForInteractiveOrComplete(): Promise<void>', () => {
       setReadyState('interactive')
 
       try {
-        const result = waitForInteractiveOrComplete()
-        const proResult = await result
+        const result = await waitForInteractiveOrComplete()
 
-        expect(result).toBePromise()
-        expect(proResult).toBeUndefined()
+        expect(result).toBeUndefined()
         expect(addEventListener).not.toBeCalled()
       } finally {
         addEventListener.mockRestore()
@@ -48,11 +44,9 @@ describe('waitForInteractiveOrComplete(): Promise<void>', () => {
       setReadyState('complete')
 
       try {
-        const result = waitForInteractiveOrComplete()
-        const proResult = await result
+        const result = await waitForInteractiveOrComplete()
 
-        expect(result).toBePromise()
-        expect(proResult).toBeUndefined()
+        expect(result).toBeUndefined()
         expect(addEventListener).not.toBeCalled()
       } finally {
         addEventListener.mockRestore()

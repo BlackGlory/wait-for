@@ -1,5 +1,4 @@
 import { waitForTimeout } from '@src/wait-for-timeout'
-import '@blackglory/jest-matchers'
 
 describe('waitForTimeout(ms: number): Promise<void>', () => {
   it('calls setTimeout', () => {
@@ -17,11 +16,10 @@ describe('waitForTimeout(ms: number): Promise<void>', () => {
     jest.useFakeTimers()
     const ms = 500
 
-    const result = waitForTimeout(ms)
+    const promise = waitForTimeout(ms)
     jest.advanceTimersByTime(500)
-    const proResult = await result
+    const result = await promise
 
-    expect(result).toBePromise()
-    expect(proResult).toBeUndefined()
+    expect(result).toBeUndefined()
   })
 })

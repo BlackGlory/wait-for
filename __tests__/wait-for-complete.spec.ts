@@ -1,5 +1,4 @@
 import { waitForComplete } from '@src/wait-for-complete'
-import '@blackglory/jest-matchers'
 
 describe('waitForComplete(): Promise<void>', () => {
   describe('document.readyState = loading', () => {
@@ -8,17 +7,16 @@ describe('waitForComplete(): Promise<void>', () => {
       setReadyState('loading')
 
       try {
-        const result = waitForComplete()
+        const promise = waitForComplete()
         queueMicrotask(() => {
           setReadyState('interactive')
           document.dispatchEvent(new Event('readystatechange'))
           setReadyState('complete')
           document.dispatchEvent(new Event('readystatechange'))
         })
-        const proResult = await result
+        const result = await promise
 
-        expect(result).toBePromise()
-        expect(proResult).toBeUndefined()
+        expect(result).toBeUndefined()
         expect(addEventListener).toBeCalledTimes(1)
       } finally {
         addEventListener.mockRestore()
@@ -32,15 +30,14 @@ describe('waitForComplete(): Promise<void>', () => {
       setReadyState('interactive')
 
       try {
-        const result = waitForComplete()
+        const promise = waitForComplete()
         queueMicrotask(() => {
           setReadyState('complete')
           document.dispatchEvent(new Event('readystatechange'))
         })
-        const proResult = await result
+        const result = await promise
 
-        expect(result).toBePromise()
-        expect(proResult).toBeUndefined()
+        expect(result).toBeUndefined()
         expect(addEventListener).toBeCalledTimes(1)
       } finally {
         addEventListener.mockRestore()
@@ -54,11 +51,9 @@ describe('waitForComplete(): Promise<void>', () => {
       setReadyState('complete')
 
       try {
-        const result = waitForComplete()
-        const proResult = await result
+        const result = await waitForComplete()
 
-        expect(result).toBePromise()
-        expect(proResult).toBeUndefined()
+        expect(result).toBeUndefined()
         expect(addEventListener).not.toBeCalled()
       } finally {
         addEventListener.mockRestore()
