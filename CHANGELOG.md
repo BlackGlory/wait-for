@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.5.4](https://github.com/BlackGlory/wait-for/compare/v0.5.3...v0.5.4) (2023-01-28)
+
+
+### Bug Fixes
+
+* the signature of `waitForEventEmitter` ([fb0d58a](https://github.com/BlackGlory/wait-for/commit/fb0d58a443cc996917272ff93bbaa8daac7e86ce))
+
 ### [0.5.3](https://github.com/BlackGlory/wait-for/compare/v0.5.2...v0.5.3) (2022-11-01)
 
 
