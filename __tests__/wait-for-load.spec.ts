@@ -1,9 +1,9 @@
-import { waitForLoad } from '@src/wait-for-load'
+import { waitForLoad } from '@src/wait-for-load.js'
 
 describe('waitForLoad(): Promise<void>', () => {
   describe('document.readyState = loading', () => {
     it('adds a load event listener to window', async () => {
-      const addEventListener = jest.spyOn(window, 'addEventListener')
+      const addEventListener = vi.spyOn(window, 'addEventListener')
       setReadyState('loading')
 
       try {
@@ -22,7 +22,7 @@ describe('waitForLoad(): Promise<void>', () => {
 
   describe('document.readyState = interactive', () => {
     it('adds a load event listener to window', async () => {
-      const addEventListener = jest.spyOn(window, 'addEventListener')
+      const addEventListener = vi.spyOn(window, 'addEventListener')
       setReadyState('interactive')
 
       try {
@@ -41,7 +41,7 @@ describe('waitForLoad(): Promise<void>', () => {
 
   describe('document.readyState = complete', () => {
     it('resolves immediately', async () => {
-      const addEventListener = jest.spyOn(window, 'addEventListener')
+      const addEventListener = vi.spyOn(window, 'addEventListener')
       setReadyState('complete')
 
       try {

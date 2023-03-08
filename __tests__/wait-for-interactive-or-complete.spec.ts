@@ -1,9 +1,9 @@
-import { waitForInteractiveOrComplete } from '@src/wait-for-interactive-or-complete'
+import { waitForInteractiveOrComplete } from '@src/wait-for-interactive-or-complete.js'
 
 describe('waitForInteractiveOrComplete(): Promise<void>', () => {
   describe('document.readyState = loading', () => {
     it('add a readystatechange event listener to document', async () => {
-      const addEventListener = jest.spyOn(document, 'addEventListener')
+      const addEventListener = vi.spyOn(document, 'addEventListener')
       setReadyState('loading')
 
       try {
@@ -24,7 +24,7 @@ describe('waitForInteractiveOrComplete(): Promise<void>', () => {
 
   describe('document.readyState = interactive', () => {
     it('resolves immediately', async () => {
-      const addEventListener = jest.spyOn(document, 'addEventListener')
+      const addEventListener = vi.spyOn(document, 'addEventListener')
       setReadyState('interactive')
 
       try {
@@ -40,7 +40,7 @@ describe('waitForInteractiveOrComplete(): Promise<void>', () => {
 
   describe('document.readyState = complete', () => {
     it('resolves immediately', async () => {
-      const addEventListener = jest.spyOn(document, 'addEventListener')
+      const addEventListener = vi.spyOn(document, 'addEventListener')
       setReadyState('complete')
 
       try {

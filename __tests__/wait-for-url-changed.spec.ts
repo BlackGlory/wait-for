@@ -1,4 +1,4 @@
-import { waitForUrlChanged } from '@src/wait-for-url-changed'
+import { waitForUrlChanged } from '@src/wait-for-url-changed.js'
 
 describe('waitForUrlChanged(): Promise<void>', () => {
   it('resolves when url changed', async () => {

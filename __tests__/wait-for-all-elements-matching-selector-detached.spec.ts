@@ -1,4 +1,4 @@
-import { waitForAllElementsMatchingSelectorDetached } from '@src/wait-for-all-elements-matching-selector-detached'
+import { waitForAllElementsMatchingSelectorDetached } from '@src/wait-for-all-elements-matching-selector-detached.js'
 
 describe(`
   waitForAllElementsMatchingSelectorDetached(

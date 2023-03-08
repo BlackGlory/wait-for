@@ -1,4 +1,4 @@
-import { waitForElementsMatchingSelectorAttached } from '@src/wait-for-elements-matching-selector-attached'
+import { waitForElementsMatchingSelectorAttached } from '@src/wait-for-elements-matching-selector-attached.js'
 
 describe(`
   waitForElementsMatchingSelectorAttached(

@@ -1,4 +1,4 @@
-import { waitForDetached } from '@src/wait-for-detached'
+import { waitForDetached } from '@src/wait-for-detached.js'
 
 describe('waitForDetached(nodes: Node[]): Promise<void>', () => {
   describe('element exists', () => {

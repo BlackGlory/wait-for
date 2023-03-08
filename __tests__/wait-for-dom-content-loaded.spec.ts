@@ -1,9 +1,9 @@
-import { waitForDOMContentLoaded } from '@src/wait-for-dom-content-loaded'
+import { waitForDOMContentLoaded } from '@src/wait-for-dom-content-loaded.js'
 
 describe('waitForDOMContentLoaded(): Promise<void>', () => {
   describe('document.readyState = loading', () => {
     it('add a load event listener to document', async () => {
-      const addEventListener = jest.spyOn(document, 'addEventListener')
+      const addEventListener = vi.spyOn(document, 'addEventListener')
       setReadyState('loading')
 
       try {
@@ -22,7 +22,7 @@ describe('waitForDOMContentLoaded(): Promise<void>', () => {
 
   describe('document.readyState = interactive', () => {
     it('resolves immediately', async () => {
-      const addEventListener = jest.spyOn(document, 'addEventListener')
+      const addEventListener = vi.spyOn(document, 'addEventListener')
       setReadyState('interactive')
 
       try {
@@ -38,7 +38,7 @@ describe('waitForDOMContentLoaded(): Promise<void>', () => {
 
   describe('document.readyState = complete', () => {
     it('resolves immediately', async () => {
-      const addEventListener = jest.spyOn(document, 'addEventListener')
+      const addEventListener = vi.spyOn(document, 'addEventListener')
       setReadyState('complete')
 
       try {

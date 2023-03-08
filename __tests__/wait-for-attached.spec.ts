@@ -1,4 +1,4 @@
-import { waitForAttached } from '@src/wait-for-attached'
+import { waitForAttached } from '@src/wait-for-attached.js'
 
 describe('waitForAttached(nodes: Node[]): Promise<void>', () => {
   describe('element exists', () => {

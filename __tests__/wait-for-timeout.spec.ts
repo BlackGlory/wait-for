@@ -1,9 +1,9 @@
-import { waitForTimeout } from '@src/wait-for-timeout'
+import { waitForTimeout } from '@src/wait-for-timeout.js'
 
 describe('waitForTimeout(ms: number): Promise<void>', () => {
   it('calls setTimeout', () => {
-    jest.useFakeTimers()
-    const setTimeout = jest.spyOn(globalThis, 'setTimeout')
+    vi.useFakeTimers()
+    const setTimeout = vi.spyOn(globalThis, 'setTimeout')
     const ms = 500
 
     waitForTimeout(ms)
@@ -13,11 +13,11 @@ describe('waitForTimeout(ms: number): Promise<void>', () => {
   })
 
   it('resolves after ms', async () => {
-    jest.useFakeTimers()
+    vi.useFakeTimers()
     const ms = 500
 
     const promise = waitForTimeout(ms)
-    jest.advanceTimersByTime(500)
+    vi.advanceTimersByTime(500)
     const result = await promise
 
     expect(result).toBeUndefined()

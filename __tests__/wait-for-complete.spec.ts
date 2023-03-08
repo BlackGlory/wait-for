@@ -1,9 +1,9 @@
-import { waitForComplete } from '@src/wait-for-complete'
+import { waitForComplete } from '@src/wait-for-complete.js'
 
 describe('waitForComplete(): Promise<void>', () => {
   describe('document.readyState = loading', () => {
     it('add a readystatechange event listener to document', async () => {
-      const addEventListener = jest.spyOn(document, 'addEventListener')
+      const addEventListener = vi.spyOn(document, 'addEventListener')
       setReadyState('loading')
 
       try {
@@ -26,7 +26,7 @@ describe('waitForComplete(): Promise<void>', () => {
 
   describe('document.readyState = interactive', () => {
     it('add a readystatechange event listener to document', async () => {
-      const addEventListener = jest.spyOn(document, 'addEventListener')
+      const addEventListener = vi.spyOn(document, 'addEventListener')
       setReadyState('interactive')
 
       try {
@@ -47,7 +47,7 @@ describe('waitForComplete(): Promise<void>', () => {
 
   describe('document.readyState = complete', () => {
     it('resolves immediately', async () => {
-      const addEventListener = jest.spyOn(document, 'addEventListener')
+      const addEventListener = vi.spyOn(document, 'addEventListener')
       setReadyState('complete')
 
       try {

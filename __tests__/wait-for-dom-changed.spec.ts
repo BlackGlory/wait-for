@@ -1,4 +1,4 @@
-import { waitForDOMChanged } from '@src/wait-for-dom-changed'
+import { waitForDOMChanged } from '@src/wait-for-dom-changed.js'
 
 describe('waitForDOMChanged(): Promise<void>', () => {
   it('resolves when dom changed', async () => {

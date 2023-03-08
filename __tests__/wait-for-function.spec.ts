@@ -1,4 +1,4 @@
-import { waitForFunction } from '@src/wait-for-function'
+import { waitForFunction } from '@src/wait-for-function.js'
 
 const TIME_ERROR = 1
 
@@ -6,7 +6,7 @@ describe('waitForFunction<T>(fn: () => boolean | PromiseLike<boolean>, interval?
   describe('fn returns a falsy value', () => {
     it('loop until fn returning a truthy value', async () => {
       const value = 64
-      const fn = jest.fn()
+      const fn = vi.fn()
         .mockReturnValueOnce(Promise.resolve(false))
         .mockReturnValue(Promise.resolve(value))
 
@@ -23,7 +23,7 @@ describe('waitForFunction<T>(fn: () => boolean | PromiseLike<boolean>, interval?
   describe('fn returns a truthy value', () => {
     it('resolves immediately', async () => {
       const value = 89
-      const fn = jest.fn().mockReturnValue(Promise.resolve(value))
+      const fn = vi.fn().mockReturnValue(Promise.resolve(value))
 
       const startTime = Date.now()
       const result = await waitForFunction(fn)

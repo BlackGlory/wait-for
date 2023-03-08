@@ -1,4 +1,4 @@
-import { waitForStateChanged } from '@src/wait-for-state-changed'
+import { waitForStateChanged } from '@src/wait-for-state-changed.js'
 
 describe('waitForStateChanged(): Promise<void>', () => {
   it('resolves when location.hash changed', async () => {

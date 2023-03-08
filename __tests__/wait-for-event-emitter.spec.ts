@@ -1,4 +1,4 @@
-import { waitForEventEmitter } from '@src/wait-for-event-emitter'
+import { waitForEventEmitter } from '@src/wait-for-event-emitter.js'
 import { getErrorPromise } from 'return-style'
 import { AbortController } from 'extra-abort'
 import { EventEmitter } from 'events'
@@ -7,7 +7,7 @@ describe('waitForEventEmitter', () => {
   it('resolves when the event triggered', async () => {
     const args = ['arg']
     const emitter = new EventEmitter()
-    const addEventListener = jest.spyOn(emitter, 'once')
+    const addEventListener = vi.spyOn(emitter, 'once')
 
     const promise = waitForEventEmitter(emitter, 'message')
     queueMicrotask(() => emitter.emit('message', ...args))
@@ -23,8 +23,8 @@ describe('waitForEventEmitter', () => {
       const controller = new AbortController()
       controller.abort()
       const target = new EventEmitter()
-      const once = jest.spyOn(target, 'once')
-      const off = jest.spyOn(target, 'off')
+      const once = vi.spyOn(target, 'once')
+      const off = vi.spyOn(target, 'off')
 
       const err = await getErrorPromise(
         waitForEventEmitter(target, 'event', controller.signal)
@@ -38,8 +38,8 @@ describe('waitForEventEmitter', () => {
     test('signal aborted after listening ', async () => {
       const controller = new AbortController()
       const target = new EventEmitter()
-      const once = jest.spyOn(target, 'once')
-      const off = jest.spyOn(target, 'off')
+      const once = vi.spyOn(target, 'once')
+      const off = vi.spyOn(target, 'off')
 
       const promise = getErrorPromise(
         waitForEventEmitter(target, 'event', controller.signal)

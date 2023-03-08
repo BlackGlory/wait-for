@@ -1,4 +1,4 @@
-import { fromMutationObserver } from '@utils/from-mutation-observer'
+import { fromMutationObserver } from '@utils/from-mutation-observer.js'
 import { filter, mergeMap } from 'rxjs/operators'
 
 export function waitForDetached(...nodes: Node[]): Promise<void> {

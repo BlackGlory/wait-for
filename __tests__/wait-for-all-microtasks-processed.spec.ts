@@ -1,4 +1,4 @@
-import { waitForAllMicrotasksProcessed } from '@src/wait-for-all-microtasks-processed'
+import { waitForAllMicrotasksProcessed } from '@src/wait-for-all-microtasks-processed.js'
 
 describe('waitForAllMicrotasksProcessed', () => {
   test('wait, queue', async () => {

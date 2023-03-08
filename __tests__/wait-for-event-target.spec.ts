@@ -1,11 +1,11 @@
-import { waitForEventTarget } from '@src/wait-for-event-target'
+import { waitForEventTarget } from '@src/wait-for-event-target.js'
 import { AbortController } from 'extra-abort'
 import { getErrorPromise } from 'return-style'
 
 describe('waitForEventTarget', () => {
   it('resolves when the event triggered', async () => {
     const ul = document.createElement('div')
-    const addEventListener = jest.spyOn(ul, 'addEventListener')
+    const addEventListener = vi.spyOn(ul, 'addEventListener')
     const li = document.createElement('li')
     ul.append(li)
 
@@ -24,8 +24,8 @@ describe('waitForEventTarget', () => {
       const controller = new AbortController()
       controller.abort()
       const target = new EventTarget()
-      const addEventListener = jest.spyOn(target, 'addEventListener')
-      const removeEventListener = jest.spyOn(target, 'removeEventListener')
+      const addEventListener = vi.spyOn(target, 'addEventListener')
+      const removeEventListener = vi.spyOn(target, 'removeEventListener')
 
       const err = await getErrorPromise(
         waitForEventTarget(target, 'event', controller.signal)
@@ -39,8 +39,8 @@ describe('waitForEventTarget', () => {
     test('signal aborted after listening ', async () => {
       const controller = new AbortController()
       const target = new EventTarget()
-      const addEventListener = jest.spyOn(target, 'addEventListener')
-      const removeEventListener = jest.spyOn(target, 'removeEventListener')
+      const addEventListener = vi.spyOn(target, 'addEventListener')
+      const removeEventListener = vi.spyOn(target, 'removeEventListener')
 
       const promise = getErrorPromise(
         waitForEventTarget(target, 'event', controller.signal)
