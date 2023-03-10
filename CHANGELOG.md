@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.7.1](https://github.com/BlackGlory/wait-for/compare/v0.7.0...v0.7.1) (2023-03-10)
+
+
+### Features
+
+* add the optional parameter `signal` ([a64e2cf](https://github.com/BlackGlory/wait-for/commit/a64e2cf7c41ea8049298863d43b8f2e0551c8069))
+
 ## [0.7.0](https://github.com/BlackGlory/wait-for/compare/v0.6.0...v0.7.0) (2023-03-08)
 
 
