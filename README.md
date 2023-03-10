@@ -105,7 +105,7 @@ function waitForFunction<T>(
 
 ### waitForTimeout
 ```ts
-function waitForTimeout(ms: number): Promise<void>
+function waitForTimeout(ms: number, signal?: AbortSignal): Promise<void>
 ```
 
 ### waitForStateChanged
