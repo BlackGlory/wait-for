@@ -25,5 +25,8 @@ test('Index', () => {
 
   , 'waitForAllMicrotasksProcessed'
   , 'waitForAllMacrotasksProcessed'
+
+  , 'waitForIdleCallback'
+  , 'waitForAnimationFrame'
   ].sort())
 })

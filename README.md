@@ -127,3 +127,13 @@ function waitForAllMacrotasksProcessed(): Promise<void>
 ```ts
 function waitForAllMicrotasksProcessed(): Promise<void>
 ```
+
+### waitForIdleCallback
+```ts
+function waitForIdleCallback(options?: IdleRequestOptions): Promise<IdleDeadline>
+```
+
+### waitForAnimationFrame
+```ts
+function waitForAnimationFrame(): Promise<DOMHighResTimeStamp>
+```
