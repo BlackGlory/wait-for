@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.8.0](https://github.com/BlackGlory/wait-for/compare/v0.7.4...v0.8.0) (2025-01-20)
+
+
+### ⚠ BREAKING CHANGES
+
+* - Node.js v16 => Node.js v22
+- ES2018 => ES2022
+
+### Features
+
+* add `waitForIdleCallback`, `waitForAnimationFrame` ([f7f5db4](https://github.com/BlackGlory/wait-for/commit/f7f5db47d43500eaf0b5f46a38d2bea2867a7269))
+
+
+* upgrade dependencies ([35cbe3f](https://github.com/BlackGlory/wait-for/commit/35cbe3fd157f963e0d6b1223492953619310d5e9))
+
 ### [0.7.4](https://github.com/BlackGlory/wait-for/compare/v0.7.3...v0.7.4) (2023-06-11)
 
 
