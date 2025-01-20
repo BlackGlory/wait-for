@@ -1,4 +1,4 @@
-import { fromEvent, race, map, filter, firstValueFrom } from 'rxjs'
+import { fromEvent, map, filter, firstValueFrom } from 'rxjs'
 
 /**
  * waitForLoad的边缘情况替代品:
