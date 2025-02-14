@@ -137,3 +137,10 @@ function waitForIdleCallback(options?: IdleRequestOptions): Promise<IdleDeadline
 ```ts
 function waitForAnimationFrame(): Promise<DOMHighResTimeStamp>
 ```
+
+### waitForVideoFrameCallback
+```ts
+function waitForVideoFrameCallback(
+  video: HTMLVideoElement
+): Promise<Parameters<VideoFrameRequestCallback>>
+```

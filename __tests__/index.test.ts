@@ -28,5 +28,7 @@ test('Index', () => {
 
   , 'waitForIdleCallback'
   , 'waitForAnimationFrame'
+
+  , 'waitForVideoFrameCallback'
   ].sort())
 })

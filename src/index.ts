@@ -24,3 +24,5 @@ export * from './wait-for-all-macrotasks-processed.js'
 
 export * from './wait-for-idle-callback.js'
 export * from './wait-for-animation-frame.js'
+
+export * from './wait-for-video-frame-callback.js'
