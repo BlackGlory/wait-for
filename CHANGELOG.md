@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.8.1](https://github.com/BlackGlory/wait-for/compare/v0.8.0...v0.8.1) (2025-02-14)
+
+
+### Features
+
+* add `waitForVideoFrameCallback` ([8cf3ee9](https://github.com/BlackGlory/wait-for/commit/8cf3ee96b8457ae260671eab3268342c570f68ae))
+
 ## [0.8.0](https://github.com/BlackGlory/wait-for/compare/v0.7.4...v0.8.0) (2025-01-20)
 
 
