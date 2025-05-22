@@ -31,13 +31,6 @@ function waitForElementsMatchingSelectorAttached(
 ): Promise<Element[]>
 ```
 
-### waitForElementsMatchingSelectorAttached
-```ts
-function waitForElementsMatchingSelectorAttached(
-  selector: string
-): Promise<Element[]>
-```
-
 ### waitForAllElementsMatchingSelectorDetached
 ```ts
 function waitForAllElementsMatchingSelectorDetached(
