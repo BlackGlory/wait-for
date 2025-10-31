@@ -1,4 +1,4 @@
-import { observeRemovalOfDescendantNodes } from '@blackglory/observe'
+import { observeRemovalsOfDescendantNodes } from '@blackglory/observe'
 import { firstValueFrom } from 'rxjs'
 import { filter } from 'rxjs/operators'
 
@@ -8,7 +8,7 @@ export async function waitForAllElementsMatchingSelectorDetached(
   if (countElements(selector) === 0) return
 
   await firstValueFrom(
-    observeRemovalOfDescendantNodes(document).pipe(
+    observeRemovalsOfDescendantNodes(document).pipe(
       filter(() => countElements(selector) === 0)
     )
   )

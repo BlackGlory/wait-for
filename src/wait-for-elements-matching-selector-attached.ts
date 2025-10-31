@@ -1,4 +1,4 @@
-import { observeAdditionOfDescendantNodes } from '@blackglory/observe'
+import { observeAdditionsOfDescendantNodes } from '@blackglory/observe'
 import { toArray } from 'iterable-operator'
 
 export function waitForElementsMatchingSelectorAttached(
@@ -8,7 +8,7 @@ export function waitForElementsMatchingSelectorAttached(
     const elements = document.querySelectorAll(selector)
     if (elements.length) return resolve(toArray(elements))
 
-    const observer = observeAdditionOfDescendantNodes(document).subscribe(() => {
+    const observer = observeAdditionsOfDescendantNodes(document).subscribe(() => {
       const elements = document.querySelectorAll(selector)
       if (elements.length) {
         observer.unsubscribe()
