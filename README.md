@@ -101,6 +101,11 @@ function waitForFunction<T>(
 function waitForTimeout(ms: number, signal?: AbortSignal): Promise<void>
 ```
 
+### waitForSchedule
+```ts
+function waitForSchedule(timestamp: number, signal?: AbortSignal): Promise<void>
+```
+
 ### waitForStateChanged
 ```ts
 function waitForStateChanged(): Promise<void>

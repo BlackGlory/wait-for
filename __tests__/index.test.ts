@@ -19,6 +19,7 @@ test('Index', () => {
 
   , 'waitForFunction'
   , 'waitForTimeout'
+  , 'waitForSchedule'
 
   , 'waitForStateChanged'
   , 'waitForUrlChanged'

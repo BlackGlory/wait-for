@@ -15,6 +15,7 @@ export * from './wait-for-interactive-or-complete.js'
 
 export * from './wait-for-function.js'
 export * from './wait-for-timeout.js'
+export * from './wait-for-schedule.js'
 
 export * from './wait-for-state-changed.js'
 export * from './wait-for-url-changed.js'
