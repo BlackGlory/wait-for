@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.8.4](https://github.com/BlackGlory/wait-for/compare/v0.8.3...v0.8.4) (2025-11-30)
+
+
+### Features
+
+* es2022 => es2020 ([4c00302](https://github.com/BlackGlory/wait-for/commit/4c00302f0071d4d1e750e3a32939eebf845eafd5))
+
 ### [0.8.3](https://github.com/BlackGlory/wait-for/compare/v0.8.2...v0.8.3) (2025-11-26)
 
 
