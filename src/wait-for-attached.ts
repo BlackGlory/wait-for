@@ -25,5 +25,5 @@ function isAttached(nodes: Node[]): boolean {
 }
 
 function isAddedNodesMutation(mutation: MutationRecord): boolean {
-  return !!mutation.addedNodes
+  return mutation.addedNodes.length > 0
 }

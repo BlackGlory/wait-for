@@ -25,5 +25,5 @@ function isDetached(nodes: Node[]): boolean {
 }
 
 function isRemovedNodesMutation(mutation: MutationRecord): boolean {
-  return !!mutation.removedNodes
+  return mutation.removedNodes.length > 0
 }
