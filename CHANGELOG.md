@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.8.5](https://github.com/BlackGlory/wait-for/compare/v0.8.4...v0.8.5) (2026-02-20)
+
+
+### Features
+
+* **wait-for-all-macrotasks-processed:** await `setImmediate` and `setTimeout(0)` at the same time ([3bf298c](https://github.com/BlackGlory/wait-for/commit/3bf298c20556c418f180b1ccffb49c777a0a69b3))
+
+
+### Bug Fixes
+
+* **wait-for-attached, wait-for-detached:** filter predicates ([835e54c](https://github.com/BlackGlory/wait-for/commit/835e54c0f9a209a9d8edbc2ce3bfca41e8c10faa))
+
 ### [0.8.4](https://github.com/BlackGlory/wait-for/compare/v0.8.3...v0.8.4) (2025-11-30)
 
 
